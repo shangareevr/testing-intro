@@ -45,10 +45,7 @@ function calculateCartSubtotal(cart) {
 
 function calculateOrderTotal(cart, promeCode) {
   const subtotal = calculateCartSubtotal(cart);
-  let discount = 0;
-  if (promeCode === 'SAVE10' && subtotal >= 20000) {
-    discount = Math.ceil(subtotal * 0.1);
-  }
+  const discount = promeCode === 'SAVE10' && subtotal >= 20000 ?  Math.round(subtotal * 0.1) : 0;
 
   const delivery = subtotal >= 50000 ? 0 : 30000;
 

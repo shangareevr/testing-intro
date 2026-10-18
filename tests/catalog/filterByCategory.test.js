@@ -20,7 +20,13 @@ describe('filterByCategory', () => {
   test("'home' возвращает товары с ID [4, 5]", () => {
     expect(filterByCategory(products, 'home').map((product) => product.id)).toEqual([4, 5]);
   });
-  test.todo("'clothes' возвращает пустой массив");
-  test.todo("'toys' возвращает пустой массив");
-  test.todo("'sports' возвращает пустой массив");
+  test("'clothes' возвращает пустой массив", () => {
+    expect(filterByCategory(products, 'clothes').map((product) => product.id)).toEqual([]);
+  });
+  test("'toys' возвращает пустой массив", () => {
+    expect(filterByCategory(products, 'toys').map((product) => product.id)).toEqual([]);
+  });
+  test("'sports' возвращает пустой массив", () => {
+    expect(filterByCategory(products, 'sports').map((product) => product.id)).toEqual([]);
+  });
 });

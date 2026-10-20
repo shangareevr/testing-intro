@@ -18,7 +18,7 @@ function addToCart(cart, product, quantity) {
   return [...cart, { ...product, quantity: totalQuantity }];
 }
 function changeQuantity(cart, productId, totalQuantity) {
-  const current = cart.find((product) => productId === productId);
+  const current = cart.find((product) => product.id === productId);
 
   if (!current) {
     return cart;
